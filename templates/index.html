@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🍽️ Food Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>🍽️ Food Suggestion Chatbot</h1>
+
+    <div class="selectors">
+      <label>Preference:
+        <select id="preference">
+          <option value="vegetarian">Vegetarian</option>
+          <option value="non_vegetarian">Non-Vegetarian</option>
+        </select>
+      </label>
+
+      <label>Category:
+        <select id="category">
+          <option value="healthy">Healthy</option>
+          <option value="comfort">Comfort</option>
+        </select>
+      </label>
+
+
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch" />
+          <span class="slider"></span>
+        </label>
+        <span class="theme-label">🌞 Light</span>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="askBot('breakfast')">Breakfast</button>
+      <button onclick="askBot('lunch')">Lunch</button>
+      <button onclick="askBot('dinner')">Dinner</button>
+      <button onclick="askBot('snack')">Snack</button>
+      <button onclick="askBot('daily_plan')">Daily Plan</button>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+      <div class="chat-bubble bot">👋 Select options or type a message to get a meal suggestion!</div>
+    </div>
+
+    <div class="favorites-container">
+      <h2>⭐ Favorites</h2>
+      <div id="favorites-list">No favorites saved.</div>
+      <button id="clear-favorites-btn" style="display:none;">Clear All Favorites</button>
+    </div>
+
+    <div class="chat-input">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Type your request (e.g., lunch, daily plan)..."
+        autocomplete="off"
+      />
+      <button id="voiceBtn" title="Speak">
+  🎙️
+</button>
+
+      <button onclick="handleUserInput()">Send</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
