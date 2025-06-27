@@ -1,4 +1,4 @@
-const SPOONACULAR_API_KEY = "fb469d05bd3d430dab4dcd664ed98944"; // 🔁 Replace with your actual key
+const SPOONACULAR_API_KEY = ""; // 🔁 Replace with your actual key
 
 // ====== Global State ======
 let lastMealType = null;
