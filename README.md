@@ -19,7 +19,8 @@ A smart and friendly food recommendation chatbot that helps users discover meal 
 
 ## 📸 Preview
 
-![Food Chatbot Screenshot](preview-image.png) <!-- Replace with actual image if available -->
+![Food Chatbot Screenshot](![Screenshot](https://github.com/user-attachments/assets/311aa7de-a2eb-4b8e-b75c-f3d7af24bf5d)
+) <!-- Replace with actual image if available -->
 
 ---
 
