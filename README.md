@@ -32,14 +32,6 @@ A smart and friendly food recommendation chatbot that helps users discover meal 
 - **Storage**: LocalStorage for saving favorites and theme preference
 
 ---
-├── app.py                  # Flask backend
-├── static/
-│   ├── script.js           # Frontend JavaScript
-│   ├── style.css           # App styling
-├── templates/
-│   └── index.html          # Web UI
-├── requirements.txt        # Python dependencies
-└── README.md
 
 ## 🚀 Setup
 
