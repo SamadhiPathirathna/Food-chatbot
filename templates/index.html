@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chef AI — Your Personal Food Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">🍽️</div>
+        <h1 class="app-title">Chef AI</h1>
+        <p class="app-subtitle">Your personal food assistant</p>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Dietary Preference</p>
+        <div class="pill-group" id="pref-group">
+          <button class="pill active" data-value="vegetarian">🥦 Vegetarian</button>
+          <button class="pill" data-value="non_vegetarian">🍗 Non-Veg</button>
+          <button class="pill" data-value="vegan">🌱 Vegan</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Food Mood</p>
+        <div class="pill-group" id="mood-group">
+          <button class="pill active" data-value="healthy">🥗 Healthy</button>
+          <button class="pill" data-value="comfort">🍔 Comfort</button>
+          <button class="pill" data-value="quick">⚡ Quick</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Today's Calories</p>
+        <div class="calorie-display">
+          <div class="calorie-number" id="calorie-count">0</div>
+          <div class="calorie-label">/ 2000 kcal goal</div>
+          <div class="calorie-bar-bg">
+            <div class="calorie-bar-fill" id="calorie-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">⭐ Saved Favorites</p>
+        <div id="favorites-list" class="favorites-list">
+          <p class="empty-state">No favorites yet</p>
+        </div>
+        <button id="clear-favorites-btn" class="clear-btn" style="display:none;">Clear All</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="theme-toggle-btn" id="themeBtn">🌙 Dark Mode</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CHAT AREA -->
+    <main class="chat-area">
+
+      <div class="chat-topbar">
+        <div class="quick-actions">
+          <button class="quick-btn" onclick="quickAsk('breakfast')">🍳 Breakfast</button>
+          <button class="quick-btn" onclick="quickAsk('lunch')">🍛 Lunch</button>
+          <button class="quick-btn" onclick="quickAsk('dinner')">🍽️ Dinner</button>
+          <button class="quick-btn" onclick="quickAsk('snack')">🍎 Snack</button>
+          <button class="quick-btn" onclick="quickAsk('daily_plan')">📅 Daily Plan</button>
+          <button class="quick-btn surprise" onclick="surpriseMe()">🎲 Surprise Me</button>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="welcome-message">
+          <div class="welcome-icon">🍽️</div>
+          <h2>Hello! I'm Chef AI</h2>
+          <p>Tell me what you're craving, pick a meal type above, or ask me anything about food. I'll suggest meals, give nutrition info, and even share recipes!</p>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Ask me anything... 'I want something spicy for dinner'"
+            autocomplete="off"
+          />
+          <button id="voiceBtn" class="voice-btn" title="Voice input">🎙️</button>
+          <button id="sendBtn" class="send-btn" onclick="handleUserInput()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">Press Enter to send · Click 🎙️ to speak</p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
